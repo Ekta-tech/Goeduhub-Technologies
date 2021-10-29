@@ -1,0 +1,349 @@
+﻿Assignment/Task 2
+
+
+1. Is a list mutable? 
+Yes 
+
+
+2. Does a list need to be homogeneous?
+No 
+
+
+3. What is the difference between a list and a tuple.
+Basic difference between list and tuple is - list is mutable whereas tuple is not.
+
+
+4. How to find the number of elements in the list?
+By using len function 
+Syntax- len(LIST_NAME)
+
+
+5. How to check whether the list is empty or not?
+By using the len method 
+If len(List)==0 i.e. the list is empty else not
+
+
+6. How to find the first and last element of the list?
+First element -> LIST_NAME[0]
+Last element -> LIST_NAME[-1]
+
+
+7. How to find the largest and lowest value in the list?
+By using max and min function
+Largest value -> max(LIST_NAME)
+Lowest value -> min(LIST_NAME)
+
+
+8. How to access elements of the list?
+By using slicing method
+
+
+9. Remove elements in a list before a specific index
+By using delete function 
+Del LIST_NAME[:SPECIFIC_INDEX]
+
+
+  
+
+
+
+10. Remove elements in a list between 2 indices
+By using delete function 
+Del LIST_NAME[START_INDEX+1,END_INDEX]
+  
+
+
+
+11. Return every 2nd element in a list between 2 indices
+  
+
+
+
+12. Get the first element from each nested list in a list
+l = [[1,2,3,4],[22,33],[445,66],[77,88,883]]
+
+
+for i in l:
+    print(i[0])
+    
+
+
+Output -         1
+22
+445
+77
+
+
+13. How to modify elements of the list?
+Using index value and assignment operator we can modify the elements in list.
+a = [1,2,3,4,5,6,7,8,9]
+a[0]= 'hi'
+Output - ['hi', 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+14. How to concatenate two lists?
+using + operator we can concatenate two list.
+a = [1,2,3,4,5]
+b = [6,7,8,9]
+print(a+b)
+Output - [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+15. How to add two lists element-wise in python?
+a = [2,3,4,5]
+b = [1,2,3,4]
+sum = []
+
+
+for (i,j) in zip(a,b):
+    sum.append(i+j)
+    
+print(sum)
+
+
+Output - [3, 5, 7, 9]
+
+
+16. Difference between del and clear?
+‘del’ statement deletes all the elements and the list object too. Unlike ‘del’ statement, clear () method removes only the elements and not the list element. After clear (), the list object still exists as an empty list.
+
+
+17. Difference between remove and pop?
+remove() method delete values or object from the list using value and pop() deletes values or object from the list using an index.
+
+
+Example:-         lst = [1,2,3,4,5,6,7,8,9]
+                lst.pop(-1)
+Out[]: 9
+
+
+lst
+Out[]: [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+lst.remove(2)
+
+
+lst
+Out[]: [1, 3, 4, 5, 6, 7, 8]
+
+
+                
+
+
+18. Difference between append and extend?
+Append
+It adds an element at the end of the list. The argument passed in the append function is added as a single element at end of the list and the length of the list is increased by 1.
+Example:-         lst = ['geeks','for','geeks']
+l = ['python','programming']
+
+
+lst.append(l)
+
+
+print(lst)
+
+
+Output - ['geeks', 'for', 'geeks', ['python', 'programming']]
+
+
+Extend
+This method appends each element of the iterable (tuple, string, or list) to the end of the list and increases the length of the list by the number of elements of the iterable passed as an argument.
+Example:-         lst = ['geeks','for','geeks']
+l = ['python','programming']
+
+
+lst.extend(l)
+
+
+print(lst)
+
+
+Output:- ['geeks', 'for', 'geeks', 'python', 'programming']
+
+
+
+
+
+
+
+
+19. Difference between indexing and Slicing?
+By using Index we can find the position of the element and apply some actions.
+lst = [1,2,3,4,5]
+print(lst[3])
+Output - 4
+By using slicing we can select a particular range of elements in a list and apply some actions.
+lst = [1,2,3,4,5]
+print(lst[1:4])
+Output - [2,3,4]
+
+
+20. Difference between sort and sorted?
+sorted() method sorts the given sequence either in ascending order or in descending order and always return the a sorted list. This method doesnot effect the original sequence.
+
+
+Example:-         lst = [2,3,4,2,3]
+
+
+sorted(lst)
+Out[]: [2, 2, 3, 3, 4]
+
+
+sort() function is very similar to sorted() but unlike sorted it returns nothing and makes changes to the original sequence. Moreover, sort() is a method of list class and can only be used with lists.
+
+
+Example:-         lst = [1,7,5,3,4,2,33,5]
+
+
+lst.sort()
+
+
+lst
+Out[]: [1, 2, 3, 4, 5, 5, 7, 33]
+
+
+
+
+21. Difference between reverse and reversed?
+reverse() method reverses the elements in the list and it change the original sequence it does not return anything. 
+a = [1,8,2,7,3,6,9,4,5]
+print(a.reverse())
+a
+[5,4,9,6,3,7,2,8,1]
+reversed() method returns an iterable  object in reverse order. it does not change original sequence.
+a = [1,8,2,7,3,6,9,4,5]
+print(list(reversed(a)))
+[5,4,9,6,3,7,2,8,1]
+
+
+22. Difference between copy and deepcopy?
+A shallow copy constructs a new compound object and then inserts references into it to the objects found in the original. A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original.
+        Example:- Shallow Copy 
+lst1=[[1,2,3,4],[11,22,434,33]]
+lst2 = lst1.copy()
+lst2
+[[1, 2, 3, 4], [11, 22, 434, 33]]
+lst1
+[[123, 224, 2345, 543]]
+lst2[1][2] = "changes"
+lst2
+[[1, 2, 3, 4], [11, 22, 'changes', 33]]
+lst1
+[[1, 2, 3, 4], [11, 22, 'changes', 33]]
+DeepCopy
+import copy 
+lst1 = [[123,224,2345,543]]
+lst2 = copy.deepcopy(lst1)
+Lst2
+[[123, 224, 2345, 543]]
+lst1
+[[123, 224, 2345, 543]]
+lst2[0][2]='changes'
+lst2
+[[123, 224, 'changes', 543]]
+lst1
+[[123, 224, 2345, 543]]
+
+
+
+
+23. How to remove duplicate elements in the list?
+l = [2,1,3,2,3,4,5,5,6,9,7]
+s = set(l)
+print(list(s))
+
+
+[1, 2, 3, 4, 5, 6, 7, 9]
+
+
+24. How to find an index of an element in the python list?
+By using index function 
+a= [1, 2, 3, 4, 5, 6, 787]
+
+
+a.index(3)
+Out[]: 2
+
+
+25. How to find the occurrences of an element in the python list?
+Using count function
+a = [1,2,3,1,1,44]
+
+
+a.count(1)
+Out[]: 3
+
+
+26. How to insert an item at a given position?
+By using insert function 
+a = [1,2,3,1,1,44]
+a.insert(3,'hi')
+a
+Out[]: [1, 2, 3, 'hi', 1, 1, 44]
+
+
+27. How to check if an item is in the list?
+Using membership operator
+
+
+a = [1, 2, 3, 'hi', 1, 1, 44] 
+'hi' in a
+Out[]: True
+ 
+28. How to flatten a list in python?
+l = [[22,11],[1,2,3],[2,33]]
+
+
+s = []
+
+
+for i in l:
+s += i
+    
+print(s)
+
+
+[22, 11, 1, 2, 3, 2, 33]
+
+
+29. How to convert python list to other data structures like set, tuple, dictionary?
+l = ['I',16,'python','programming',10]
+
+
+print(set(l))
+{'programming', 10, 'I', 16, 'python'}
+
+
+print(tuple(l))
+('I', 16, 'python', 'programming', 10)
+
+
+ print(dict(zip(l,l)))
+{'I': 'I', 16: 16, 'python': 'python', 'programming': 'programming', 10: 10}
+
+
+
+
+30. How to apply a function to all items in the list?
+l =  ['a','b','c']
+
+
+result = list(map(str.upper,l))
+
+
+print(result)
+
+
+['A', 'B', 'C']
+
+
+31. How to filter the elements based on a function in a python list?
+mark = [70, 60, 80, 90, 50]
+filtered = filter(lambda score: score >= 70, mark)
+print(list(filtered))
+[70, 80, 90]
+
+
+32. How python lists are stored in memory?
+List is stored as distinct block of memory bound together by pointers.
